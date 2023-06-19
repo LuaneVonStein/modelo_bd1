@@ -44,3 +44,16 @@ function contaTempo() {
     iniciaJogo();
   }
 }
+
+let pontuacao ={
+    name: nome_da_pessoa,
+    pontos: variavel_da_pontuacao
+}
+fetch("http://localhost:5050/score",{
+method:"POST",
+body:JSON.stringify(pontuacao),
+headers:{"Content-type":"application/json;charset=UTF-8"}
+})
+.then(response=>response.jason())
+.then(jason=>console.log(jason))
+.catch(error=>console.log(error))
